@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Value</title>
+</head>
+
+<body>
+    <h1>Account Value</h1>
+    <div id="accountValue"></div>
+    <script>
+        fetch('api_val.py')  
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('accountValue').innerText = JSON.stringify(data);
+            })
+            .catch(error => console.error('Erreur:', error));
+    </script>
+</body>
+</html>
